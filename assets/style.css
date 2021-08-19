@@ -17,3 +17,18 @@ header {
 .timer {
     font-size: 36px;
 }
+
+#quiz {
+    border: black 1px solid;
+    padding: 30px;
+}
+
+.choice {
+    padding: 15px;
+}
+
+#quiz button {
+    display: block;
+    padding: 20px;
+    margin-top: 10px;
+}
