@@ -14,14 +14,25 @@ header {
     background-color: pink;
 }
 
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+#titlescreen, #quiz {
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+    padding: 30px;
+}
+
 .timer {
     font-size: 36px;
 }
 
-#quiz {
-    border: black 1px solid;
-    padding: 30px;
-}
 
 .choice {
     padding: 15px;
@@ -29,6 +40,7 @@ header {
 
 #quiz button {
     display: block;
+    width: 100%;
     padding: 20px;
     margin-top: 10px;
 }
