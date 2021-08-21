@@ -3,8 +3,11 @@ var beginQuiz = document.querySelector('#begin');
 var quiz = document.getElementById('quiz');
 var title = document.getElementById('titlescreen');
 
+
+
+var secondsLeft = 60;
+
 function countdown() {
-    var secondsLeft = 60;
 
     var timeInterval = setInterval(function() {
       secondsLeft--;
@@ -14,7 +17,16 @@ function countdown() {
         clearInterval(timeInterval);
       }
     }, 1000);
+
+    // getChoice();
+    // if (value.correct === false) {
+    //     secondsLeft = secondsLeft - 10;
+    // }
+
 }
+
+
+
 
 const allQuestions = [
     {
@@ -27,43 +39,222 @@ const allQuestions = [
         ]
     },
     {
-        ask: "This is the second question?",
+        ask: "We need a way for text on our page to stand out. What tag can we use for this?",
         choices: [
-            {text: "A could be wrong now", correct: false},
-            {text: "We can never tell with B", correct: false},
-            {text: "Perhaps C is right this time", correct: true},
-            {text: "I'm hungry", correct: false},
+            {text: "<em>", correct: false},
+            {text: "<bold>", correct: false},
+            {text: "<strong>", correct: true},
+            {text: "<lookatme>", correct: false},
         ]
     },
     {
-        ask: "Question number three!",
+        ask: "Now that we're looking at our HTML, which is not a section or element that can make up our page?",
         choices: [
-            {text: "You're doing great, sweetie.", correct: false},
-            {text: "Just don't choose this answer.", correct: false},
-            {text: "Or this one...", correct: false},
-            {text: "Bazinga", correct: true},
+            {text: "<head>", correct: false},
+            {text: "<shoulder>", correct: true},
+            {text: "<body>", correct: false},
+            {text: "<footer>", correct: false},
         ]
     },
     {
-        ask: "Who bodied that, ate it up and gave it back?",
+        ask: "Times New Roman on a white background is ugly. What language primarily be used to style HTML?",
         choices: [
-            {text: "Cardi", correct: false},
-            {text: "Megan", correct: true},
-            {text: "Saweetie", correct: false},
-            {text: "Doja", correct: true},
+            {text: "CSS", correct: true},
+            {text: "Python", correct: false},
+            {text: "JavaScript", correct: false},
+            {text: "Catalan", correct: false},
+        ]
+    },
+    {
+        ask: "She's got the looks but our page is cluttered. What can we use to reorganize our page in different layouts?",
+        choices: [
+            {text: "Media queries can set new specifications for elements when viewing our page at different browser widths", correct: false},
+            {text: "Turning our device sideways can help see things from a new perspective", correct: false},
+            {text: "Flex containers can automatically create new rows of elements on our page", correct: false},
+            {text: "Choices 1 and 3 are both useful", correct: true},
+        ]
+    },
+    {
+        ask: "Various kinds of positioning properties will help us determine how elements are placed on our page. Which is not a kind of positioning property?",
+        choices: [
+            {text: "absolute", correct: false},
+            {text: "relative", correct: false},
+            {text: "prime", correct: true},
+            {text: "fixed", correct: false},
+        ]
+    },
+    {
+        ask: "JavaScript adds event-driven functions to our page. What can be added in our code to trigger these functions?",
+        choices: [
+            {text: "Situation monitors", correct: false},
+            {text: "Thing scouters", correct: false},
+            {text: "Circumstance hearers", correct: false},
+            {text: "Event listeners", correct: true},
+        ]
+    },
+    {
+        ask: "Variables can help store values in our functions. A variable assigned multiple values can be called a what?",
+        choices: [
+            {text: "A table", correct: false},
+            {text: "An array", correct: true},
+            {text: "A library", correct: false},
+            {text: "The grocery list", correct: false},
+        ]
+    },
+    {
+        ask: "JavaScript can help us navigate our HTML and create new elements with events. Which is not a way to traverse or alter an HTML document?",
+        choices: [
+            {text: "motherlode", correct: true},
+            {text: "querySelector", correct: true},
+            {text: "getElementById", correct: false},
+            {text: "appendChild", correct: false},
+        ]
+    },
+    {
+        ask: "We built our page! What command can we use from our local computer to send our files to a remote repository for other developers to view?",
+        choices: [
+            {text: "git push", correct: true},
+            {text: "git shove", correct: true},
+            {text: "git on", correct: false},
+            {text: "git out", correct: false},
         ]
     },
 ]
-console.log(allQuestions);
+
+// var answerChoices = allQuestions.forEach(value => {
+
+//     var answers = value.choices;
+//     // logs each question in const array
+//     // console.log(value.choices);
+
+//         answers.forEach(
+            
+//             function getChoice(value) {
+//                 // logs each answer option as object
+//                 console.log(value)
+        
+//             }
+//         )
+//     } 
+// )
+
+
+
+// // for each question in allQuestions const array
+// var evaluateAnswerChoices = allQuestions.forEach(value => {
+        
+//     var answers = value.choices;
+//         // for each answer object
+//         answers.forEach(
+
+//             function (value) {
+
+//                 // if (value.correct === true) {
+//                 //     console.log("Correct");
+//                 // } else {
+//                 //     console.log("Incorrect");
+//                 // }
+                
+//                 console.log(value.correct);
+//             }
+//         )
+//     } 
+// );
 
 
 
 
-var choices = allQuestions.forEach(value => {
-        var selection = value.choices;
-        selection.forEach(function getChoice(value) {console.log(value)})
+
+
+// for each question in allQuestions const array
+var evaluateAnswerChoices = allQuestions.forEach(
+    
+    function (value) {
+        
+        var answers = value.choices;
+            // for each answer object
+            answers.forEach(
+
+                function (value) {
+
+                    // if (value.correct === true) {
+                    //     console.log("Correct");
+                    // } else {
+                    //     console.log("Incorrect");
+                    // }
+                
+                    console.log(value.correct);
+            }
+        )
     } 
-)
+);
+
+// var container = document.querySelector(".container");
+
+// container.addEventListener("click", function(event) {
+//   var element = event.target;
+
+//   if (element.matches(".box")) {
+//     var state = element.getAttribute("data-state");
+
+//     // Use an if statement to conditionally render the number on the card
+//     if (state === "hidden") {
+//       // If the card is clicked while the state is "hidden", we set .textContent to the number 
+//       element.textContent = element.dataset.number;
+//       // Using the dataset property, we change the state to visible because the user can now see the number
+//       element.dataset.state = "visible";
+   
+//     } else {
+//       // 'Hide' the number by setting .textContent to an empty string
+//       element.textContent= "";
+//       // Use .setAttribute() method
+//       element.setAttribute("data-state", "hidden")
+     
+//     }  
+//   }
+  
+// });
+
+
+// function wrongAnswer() {
+    
+// }
+
+
+
+
+// function evaluateAnswerChoices() {
+
+//     allQuestions.forEach(value => {
+        
+//         var answers = value.choices;
+    
+//             answers.forEach(value => {
+    
+//                 // if (value.correct === true) {
+//                 //     console.log("Correct");
+//                 // } else {
+//                 //     console.log("Incorrect");
+//                 // }
+
+//                 return(value.correct);
+
+//                 }
+//             )
+//         } 
+//     )
+// }
+// console.log(evaluateAnswerChoices);
+
+
+// function reduceTime() {
+//     evaluateAnswerChoice();
+
+//     if (value.correct === false) {
+//         secondsLeft = secondsLeft - 10;
+//     }
+// }
+
 
 
 var question = document.createElement("h2");
@@ -76,17 +267,30 @@ function buildQuestion(questionNumber) {
     question.innerHTML = allQuestions[questionNumber].ask;
     quiz.appendChild(question);
 
-    choice1.textContent = allQuestions[questionNumber].choices[0].text;
-    quiz.appendChild(choice1);
+    allQuestions[questionNumber].choices.forEach(function (choice, index) {
 
-    choice2.textContent = allQuestions[questionNumber].choices[1].text;
-    quiz.appendChild(choice2);
+        var btnChoice = document.createElement("button");
 
-    choice3.textContent = allQuestions[questionNumber].choices[2].text;
-    quiz.appendChild(choice3);
+        btnChoice.textContent = choice.text;
+        btnChoice.value = choice.correct
+        btnChoice.setAttribute("class", `btn-choice btn-num-${index}`);
+        quiz.appendChild(btnChoice);
+    })
 
-    choice4.textContent = allQuestions[questionNumber].choices[3].text;
-    quiz.appendChild(choice4);
+    var answerButtons = document.getElementsByClassName("btn-choice");
+    debugger
+    Array.from(answerButtons).forEach(function (answerButton) {
+        answerButton.addEventListener("click", nextQuestion)
+    })
+
+    // choice2.textContent = allQuestions[questionNumber].choices[1].text;
+    // quiz.appendChild(choice2);
+
+    // choice3.textContent = allQuestions[questionNumber].choices[2].text;
+    // quiz.appendChild(choice3);
+
+    // choice4.textContent = allQuestions[questionNumber].choices[3].text;
+    // quiz.appendChild(choice4);
 }
 
 var questionNumber = 0;
@@ -99,45 +303,31 @@ function askQuestion() {
 
 
 
-
-
-choice1.addEventListener("click", nextQuestion);
-choice2.addEventListener("click", nextQuestion);
-choice3.addEventListener("click", nextQuestion);
-choice4.addEventListener("click", nextQuestion);
-
-// var slot1 = allQuestions[questionNumber].choices[0].correct;
-// var slot2 = allQuestions[questionNumber].choices[1].correct;
-// var slot3 = allQuestions[questionNumber].choices[2].correct;
-// var slot4 = allQuestions[questionNumber].choices[3].correct;
-
 function nextQuestion() {
-    // console.log(this.textContent);
-    // // console.log(this.value);
+    
+    // console.log(this.value);
+    if (!this.correct && secondsLeft > 10) {
+        secondsLeft =  secondsLeft - 10;
+    } else if (!this.correct && secondsLeft < 10) {
+        quiz.remove();
+        timerEl.remove();
+    }
 
-    questionNumber++;
+    if (questionNumber < allQuestions.length - 1) {
+        questionNumber++;
+    } else {
+        quiz.remove();
+        timerEl.remove();
+        return;
+    }
+   
     question.innerHTML = allQuestions[questionNumber].ask;
 
-    choice1.textContent = allQuestions[questionNumber].choices[0].text;
-    // choice1.value = slot1;
-    // console.log(this.value);
-    choice2.textContent = allQuestions[questionNumber].choices[1].text;
-    // choice2.value = slot2;
-    choice3.textContent = allQuestions[questionNumber].choices[2].text;
-    // choice3.value = slot3;
-    choice4.textContent = allQuestions[questionNumber].choices[3].text;
-    // choice4.value = slot4;
-
-    // if (this.value === true) {
-    //     console.log("Correct!"); }
-    //     else {
-    //         console.log("incorrect");
-    //     }
-    
-    // if (questionNumber >= allQuestions.length) {
-    //     return;
-    // }
-    
+    allQuestions[questionNumber].choices.forEach(function (choice, index) {
+        var choiceBtn = document.getElementsByClassName(`btn-num-${index}`)
+        choiceBtn[0].textContent = choice.text;
+        choiceBtn[0].value = choice.correct;
+    })   
 }
 
 
@@ -148,100 +338,3 @@ function removeTitle() {
 beginQuiz.addEventListener("click", countdown);
 beginQuiz.addEventListener("click", askQuestion);
 beginQuiz.addEventListener("click", removeTitle);
-
-
-
-
-
-
-
-
-
-// var buttons = quiz.getElementsByTagName("button");
-// buttons.classList.add("answer-button");
-// var answerButtons = quiz.getElementsByClassName("answer-button");
-// answerButtons.addEventListener("click", questionNumber++);
-
-// // buttonEl.addEventListener("click", nextQuestion);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var buttons = quiz.getElementsByTagName("button");
-// buttons.addEventListener("click", questionNumber++);
-
-
-
-
-
-
-// for (var i = 0; i < allQuestions.length; i++)
-
-// .setAttribute('class', 'quiz-btn')
-
-
-
-// if (buttons.allQuestions.choices.correct === true) {
-//     questionNumber++;
-// }
-
-// function nextQuestion() {
-//     for (var i = 0; i < allQuestions.length; i++) {
-//     questionNumber++;
-//     }
-// }
-
-
-
-
-
-
-
-
-
-// buttonEl.addEventListener("click", nextQuestion);
-
-// function nextQuestion() {
-//     questionNumber++;
-//     askQuestion();
-// }
-
-
-
-
-
-
-
-
-
-// buildQuestion(allQuestions[i]);
-// for (var i = 0; i < allQuestions.length; i++) {
-// }
-
-
-// if (buttonEl.allQuestions.choices.correct === true) {
-//     questionNumber++;
-// }
-
-

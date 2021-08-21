@@ -20,7 +20,7 @@ header {
     width: 100%;
 }
 
-header h3 {
+h3 {
     font-weight: 100;
     letter-spacing: 2px;
 }
@@ -33,7 +33,7 @@ h1 {
     font-size: 48px;
 }
 
-#titlescreen, #quiz {
+#titlescreen, #quiz, #timer {
     text-align: center;
     width: 40%;
     margin: 0 auto;
@@ -41,8 +41,23 @@ h1 {
     padding: 30px;
 }
 
+#quiz h2 {
+    font-size: 54px;
+    text-align: left;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
 .timer {
     font-size: 36px;
+}
+
+#timer {
+    height: 150px;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 100%;
 }
 
 
