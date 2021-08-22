@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    display: flex;
+    height: 150px;
     justify-content: space-between;
     align-content: center;
     padding: 50px;
