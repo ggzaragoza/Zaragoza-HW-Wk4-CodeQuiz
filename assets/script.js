@@ -5,6 +5,7 @@ var title = document.getElementById('titlescreen');
 
 
 
+
 var secondsLeft = 60;
 
 function countdown() {
@@ -119,139 +120,6 @@ const allQuestions = [
     },
 ]
 
-// var answerChoices = allQuestions.forEach(value => {
-
-//     var answers = value.choices;
-//     // logs each question in const array
-//     // console.log(value.choices);
-
-//         answers.forEach(
-            
-//             function getChoice(value) {
-//                 // logs each answer option as object
-//                 console.log(value)
-        
-//             }
-//         )
-//     } 
-// )
-
-
-
-// // for each question in allQuestions const array
-// var evaluateAnswerChoices = allQuestions.forEach(value => {
-        
-//     var answers = value.choices;
-//         // for each answer object
-//         answers.forEach(
-
-//             function (value) {
-
-//                 // if (value.correct === true) {
-//                 //     console.log("Correct");
-//                 // } else {
-//                 //     console.log("Incorrect");
-//                 // }
-                
-//                 console.log(value.correct);
-//             }
-//         )
-//     } 
-// );
-
-
-
-
-
-
-// for each question in allQuestions const array
-var evaluateAnswerChoices = allQuestions.forEach(
-    
-    function (value) {
-        
-        var answers = value.choices;
-            // for each answer object
-            answers.forEach(
-
-                function (value) {
-
-                    // if (value.correct === true) {
-                    //     console.log("Correct");
-                    // } else {
-                    //     console.log("Incorrect");
-                    // }
-                
-                    console.log(value.correct);
-            }
-        )
-    } 
-);
-
-// var container = document.querySelector(".container");
-
-// container.addEventListener("click", function(event) {
-//   var element = event.target;
-
-//   if (element.matches(".box")) {
-//     var state = element.getAttribute("data-state");
-
-//     // Use an if statement to conditionally render the number on the card
-//     if (state === "hidden") {
-//       // If the card is clicked while the state is "hidden", we set .textContent to the number 
-//       element.textContent = element.dataset.number;
-//       // Using the dataset property, we change the state to visible because the user can now see the number
-//       element.dataset.state = "visible";
-   
-//     } else {
-//       // 'Hide' the number by setting .textContent to an empty string
-//       element.textContent= "";
-//       // Use .setAttribute() method
-//       element.setAttribute("data-state", "hidden")
-     
-//     }  
-//   }
-  
-// });
-
-
-// function wrongAnswer() {
-    
-// }
-
-
-
-
-// function evaluateAnswerChoices() {
-
-//     allQuestions.forEach(value => {
-        
-//         var answers = value.choices;
-    
-//             answers.forEach(value => {
-    
-//                 // if (value.correct === true) {
-//                 //     console.log("Correct");
-//                 // } else {
-//                 //     console.log("Incorrect");
-//                 // }
-
-//                 return(value.correct);
-
-//                 }
-//             )
-//         } 
-//     )
-// }
-// console.log(evaluateAnswerChoices);
-
-
-// function reduceTime() {
-//     evaluateAnswerChoice();
-
-//     if (value.correct === false) {
-//         secondsLeft = secondsLeft - 10;
-//     }
-// }
 
 
 
@@ -292,7 +160,6 @@ function askQuestion() {
 
 
 
-
 function nextQuestion() {
     
     // console.log(this.value);
@@ -322,6 +189,7 @@ function nextQuestion() {
 
 
 
+
 var endScreen = document.getElementById("endscore");
 var finishedWith = document.createElement("h3");
 var formArea = document.getElementById("form");
@@ -334,6 +202,8 @@ function endTitle() {
     endScreen.appendChild(finishedWith);
     formArea.setAttribute("style", "display: block");
 }
+
+
 
 
 function removeTitle() {
