@@ -323,12 +323,16 @@ function nextQuestion() {
 
 
 var endScreen = document.getElementById("endscore");
-var greatJob = document.createElement("h3");
+var finishedWith = document.createElement("h3");
+var formArea = document.getElementById("form");
+var lastPlayer = document.getElementById("lastplayer");
 
 function endTitle() {
     endScreen.setAttribute("style", "display: block");
-    greatJob.innerHTML = "You finished with " + secondsLeft + " seconds left.";
-    endScreen.appendChild(greatJob);
+    lastPlayer.setAttribute("style", "display: block");
+    finishedWith.innerHTML = "You finished with " + secondsLeft + " seconds left.";
+    endScreen.appendChild(finishedWith);
+    formArea.setAttribute("style", "display: block");
 }
 
 
