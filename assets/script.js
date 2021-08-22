@@ -14,14 +14,12 @@ function countdown() {
       timerEl.textContent = secondsLeft;
   
       if (secondsLeft === 0) {
-        clearInterval(timeInterval);
+        clearInterval(endTitle);
+        quiz.remove();
+        timerEl.remove();
+        endTitle();
       }
     }, 1000);
-
-    // getChoice();
-    // if (value.correct === false) {
-    //     secondsLeft = secondsLeft - 10;
-    // }
 
 }
 
@@ -105,7 +103,7 @@ const allQuestions = [
         ask: "JavaScript can help us navigate our HTML and create new elements with events. Which is not a way to traverse or alter an HTML document?",
         choices: [
             {text: "motherlode", correct: true},
-            {text: "querySelector", correct: true},
+            {text: "querySelector", correct: false},
             {text: "getElementById", correct: false},
             {text: "appendChild", correct: false},
         ]
@@ -272,25 +270,17 @@ function buildQuestion(questionNumber) {
         var btnChoice = document.createElement("button");
 
         btnChoice.textContent = choice.text;
-        btnChoice.value = choice.correct
+        btnChoice.value = choice.correct;
         btnChoice.setAttribute("class", `btn-choice btn-num-${index}`);
         quiz.appendChild(btnChoice);
     })
 
     var answerButtons = document.getElementsByClassName("btn-choice");
-    debugger
+    
     Array.from(answerButtons).forEach(function (answerButton) {
         answerButton.addEventListener("click", nextQuestion)
     })
 
-    // choice2.textContent = allQuestions[questionNumber].choices[1].text;
-    // quiz.appendChild(choice2);
-
-    // choice3.textContent = allQuestions[questionNumber].choices[2].text;
-    // quiz.appendChild(choice3);
-
-    // choice4.textContent = allQuestions[questionNumber].choices[3].text;
-    // quiz.appendChild(choice4);
 }
 
 var questionNumber = 0;
@@ -306,9 +296,9 @@ function askQuestion() {
 function nextQuestion() {
     
     // console.log(this.value);
-    if (!this.correct && secondsLeft > 10) {
-        secondsLeft =  secondsLeft - 10;
-    } else if (!this.correct && secondsLeft < 10) {
+    if (!this.value) {
+        secondsLeft - 10;
+    } else if (!this.value && secondsLeft < 10) {
         quiz.remove();
         timerEl.remove();
     }
@@ -318,7 +308,7 @@ function nextQuestion() {
     } else {
         quiz.remove();
         timerEl.remove();
-        return;
+        endTitle();
     }
    
     question.innerHTML = allQuestions[questionNumber].ask;
@@ -328,6 +318,17 @@ function nextQuestion() {
         choiceBtn[0].textContent = choice.text;
         choiceBtn[0].value = choice.correct;
     })   
+}
+
+
+
+var endScreen = document.getElementById("endscore");
+var greatJob = document.createElement("h3");
+
+function endTitle() {
+    endScreen.setAttribute("style", "display: block");
+    greatJob.innerHTML = "You finished with " + secondsLeft + " seconds left.";
+    endScreen.appendChild(greatJob);
 }
 
 

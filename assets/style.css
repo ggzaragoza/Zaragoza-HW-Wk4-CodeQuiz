@@ -25,10 +25,6 @@ h3 {
     letter-spacing: 2px;
 }
 
-.hidden {
-    display: none;
-}
-
 h1 {
     font-size: 48px;
 }
@@ -56,8 +52,6 @@ h1 {
 #timer {
     height: 150px;
     width: 150px;
-    border: 1px solid white;
-    border-radius: 100%;
 }
 
 
@@ -85,4 +79,25 @@ h1 {
 .btn:hover, #quiz button:hover {
     background-color: white;
     color: black;
+}
+
+#endscore {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    display: none;
+    padding: 30px;
+}
+
+#endscore h2 {
+    font-size: 66px;
+    text-align: left;
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+#endscore h3 {
+    text-align: left;
+    font-size: 40px;
 }
