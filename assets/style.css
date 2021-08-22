@@ -76,7 +76,7 @@ h1 {
     cursor: pointer;
 }
 
-.btn:hover, #quiz button:hover {
+.btn:hover, #quiz button:hover, #submit:hover {
     background-color: white;
     color: black;
 }
@@ -102,6 +102,7 @@ h1 {
 }
 
 input {
+    display: inline;
     width: 50%;
     height: 50px;
     margin-top: 70px;
@@ -117,3 +118,29 @@ input {
     letter-spacing: 1px;
 }
 
+#last-player-name {
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+#submit {
+    display: inline;
+    padding: 20px;
+    margin-top: 25px;
+    margin-left: 15px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 1px solid white;
+    transition: ease-in-out .5s;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 10px;
+    letter-spacing: 1px;
+}

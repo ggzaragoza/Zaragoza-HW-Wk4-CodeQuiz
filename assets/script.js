@@ -206,6 +206,46 @@ function endTitle() {
 
 
 
+var playerName = document.querySelector("#playername");
+var submitName = document.querySelector("#submit");
+var msgDiv = document.querySelector("#message");
+var lastPlayerName = document.querySelector("#last-player-name");
+
+renderLastPlayer();
+
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+}
+
+function renderLastPlayer() {
+  var name = localStorage.getItem("name");
+
+  if (!name) {
+    return;
+  }
+
+  lastPlayerName.textContent = name;
+
+}
+
+submitName.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var name = document.querySelector("#playername").value;
+
+  if (name === "") {
+    displayMessage("error", "Name field is blank!");
+  } else {
+    displayMessage("success", "Submitted successfully!");
+
+    localStorage.setItem("name", name);
+    renderLastPlayer();
+  }
+});
+
+
+
 function removeTitle() {
     title.remove();
 }
