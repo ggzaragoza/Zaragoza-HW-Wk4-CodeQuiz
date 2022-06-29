@@ -1,4 +1,4 @@
-g# Zaragoza-HW-Wk4-CodeQuiz
+# Zaragoza-HW-Wk4-CodeQuiz
 
 In this repository you will find files for a simple quiz application. The quiz is launched by clicking a start ("Let's Go!") button; this in turn sets a timer of 60 seconds
 for a user to answer 10 questions as quickly as they can. Once the last question is answered, or if the timer runs out, an end screen will display with the number of seconds
